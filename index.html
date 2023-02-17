@@ -1,12 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traditional Medicine</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Yang Yue</title>
+	<link href="styles/main.css" rel="stylesheet" />
+
 </head>
+
 <body>
-    
+
+
+	<header>
+		<h1>Yang Yue's Website</h1>
+
+		<button type="button" onclick="alert('Thank you!')">Like<span>&#128077;</span></button>
+		
+		<section id="user-info-component">
+
+		</section>
+
+	</header>
+
+	<main>
+
+		
+		<nav>
+			<a href="./index.html">Home</a> |
+			<a href="./html/about.html">About</a> |
+			<a href="./html/coursework.html">Coursework</a> |
+			<a href="./html/projects.html">Projects</a> |
+			<a href="./html/research.html">Research</a>
+		</nav>
+
+
+
+			
+		<div><img src="./images/CSE134_hw2_profile_pic.jpg" alt="Yang profile pic 1" class="profile_pic"></div>
+		
+		<div class="linkedin1" id="idLinkedInIcon" 
+			onclick="window.open('https://www.linkedin.com/in/yang-yue-450359233/');" 
+			title="How to Add LinkedIn Icon in HTML">in</div>	
+
+		<h3>About Me</h3>
+
+	</main>
+
+	<p></p>
+
+
+	<p id="share_code"></p>
+
+	<script>
+	document.getElementById("share_code").innerHTML = "I want to share a snippet of instruction of ignition for <b>Apolo 11</b>";
+	</script> 
+
+	<a href="https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc">
+		Gtihub repo of Apolo 11's instruction </a>
+
+	<br>
+	<code>
+		IGNITION	CS	FLAGWRD5	# INSURE ENGONFLG IS SET. 	<br>
+		MASK	ENGONBIT										<br>
+		ADS	FLAGWRD5											<br>
+		CS	PRIO30		# TURN ON THE ENGINE.					<br>
+		EXTEND													<br>
+		RAND	DSALMOUT										<br>
+		AD	BIT13												<br>
+		EXTEND													<br>
+		WRITE	DSALMOUT										<br>
+		EXTEND			# SET TEVENT FOR DOWNLINK				<br>
+		DCA	TIME2												<br>		
+		DXCH	TEVENT											<br>
+	</code>
+
+	
+
+
+	<form action="/action_page.php">
+		<fieldset>
+			<legend>Comment:</legend>
+
+
+			<label for="favorite_page">Choose your favorite page from my website:</label>
+			<select name="favorite_page" id="favorite_page">
+			
+			  <optgroup label="This page">
+				  <option value="profile_pic1">Yang Yue's profile picture:)</option>
+			  </optgroup>
+			  
+			  <optgroup label="About">
+				  <option value="orange_cat"> Orange cat :)</option>
+		  
+			  </optgroup>
+			  
+			  <optgroup label="Coursework">
+				  <option value="Math"> Math </option>
+				  <option value="Computer Science"> Computer Science </option>
+		  
+			  </optgroup>
+			  
+			  <optgroup label="Projects">
+				  <option value="future_project"> The project that is yet to come</option>
+		  
+			  </optgroup>
+			  
+			  <optgroup label="Research">
+				  <option value="HDC_research">Hyperdimensional Computing Research</option>
+			  </optgroup>
+			</select>
+			<br>
+
+			<textarea id="comment" name="comment" rows="4" cols="50">Anything of my website should be improved? Or any comment!
+			</textarea>
+			Name:<input type="text" id="ID_name" name="name"/><br/>  
+			Email:<input type="text" id="ID_email" name="email"/><br/>  
+			<input type="button" value="commentForm" onclick="formProcess()"/> 
+			<br>
+			<input type="submit" value="Submit">
+
+		</fieldset>
+
+	</form>
+
+
+
+	<footer>
+		<p>Author: Yang Yue</p>
+		<p><a href="yayue@ucsd.edu">yayue@ucsd.edu</a></p>
+	</footer>
+
 </body>
+
+
 </html>
