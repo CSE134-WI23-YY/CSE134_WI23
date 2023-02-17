@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About me</title>
+	<link href="../styles/about.css" rel="stylesheet" />
+</head>
+
+
+
+<body>
+	<main>
+	<h1 style="background-color:powderblue;">About Yang Yue</h1>
+
+	<section>
+		<h2> My Motto</h2>
+			
+			
+		<aside>
+		You are NOT able to make every one happy.
+		</aside>
+			<pre> 
+	
+		"There’s 4 types of mindsets. 
+		One mindset is, '<strong>I must win</strong>.'
+		Another mindset is, '<strong>I must be right</strong>.' 
+		Another mindset is, '<strong>I must be liked</strong>.' 
+		And the other mindset is, '<strong>I must be comfortable</strong>.'"
+	
+	
+		<h3>	--Robert Kiyosaki</h3>
+	
+			</pre>
+	
+	</section>
+
+	<section>
+		<h3 class="Spring_in_my_step"><i>Spring in my step </i> <i class="normal">-- Silent Partner</i></h3>
+		
+		
+		<audio controls>
+			<source src="../audios/Spring_In_My_Step_Silent_Partner.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+
+	</section>
+
+
+
+	</main>
+
+	<table>
+		<caption>Programming Skills</caption>
+
+		<colgroup>
+			<col span="2" >
+		</colgroup>
+
+		<tr style="background-color:rgb(255, 0, 0)">
+		  <th>Language</th>
+		  <th>Confidence</th>
+		</tr>
+
+		<tr style="background-color:rgb(255, 127, 0)">
+		  <td>C++</td>
+		  <td>10</td>
+		</tr>
+
+		<tr style="background-color:rgb(255, 255, 0)">
+		  <td>C</td>
+		  <td>10</td>
+		</tr>
+
+		<tr style="background-color:rgb(0, 255, 0)">
+			<td>Python</td>
+			<td>8</td>
+		</tr>
+
+		<tr style="background-color:rgb(0, 0, 255); color:white">
+			<td>Java</td>
+			<td>7</td>
+		</tr>
+
+		<tr style="background-color:rgb(75, 0, 135); color:white">
+			<td>Matlab</td>
+			<td>5</td>
+		</tr>
+
+		<tr style="background-color:rgb(148, 0, 211); color:white">
+			<td>Haskell</td>
+			<td>5</td>
+		</tr>
+	  </table>
+
+	<h4>2023 New Year Resolution </h4>
+
+	<ol>
+		<li>Get an intern/ fulltime job</li>
+		<li>Train running 500km+ in total</li>
+		<li>Read every day</li>
+		<li>Finish reading <em>The Ordinary World</em> by Lu Yao</li>
+	</ol>
+
+	<p> Hobby: </p>
+	<ul>
+		<li>Soccer</li>
+		<li>Running</li>
+		<li>Cooking</li>
+	</ul>
+
+	<h3>My mother's hometown, Linqu, Weifang</h3>
+
+	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+	src="https://www.openstreetmap.org/export/embed.html?bbox=118.39536666870119%2C36.40857332152869%2C118.62195968627931%2C36.54688017175944&amp;layer=mapnik" 
+	style="border: 1px solid black">
+	</iframe>
+	<br/>
+	<small>
+		<a href="https://www.openstreetmap.org/#map=13/36.4778/118.5087">
+			View Larger Map
+		</a>
+	</small>
+
+	<br/>
+	
+
+	<h3>My father's hometown, Rongcheng, Weihai</h3>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d140016.49058174738!2d122.2429990648867!3d37.04279201963055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x359baa3b6e3c7bef%3A0x4d0cde5f5bdc05a5!2sRongcheng%2C%20Weihai%2C%20Shandong%2C%20China!5e0!3m2!1sen!2sus!4v1658433621625!5m2!1sen!2sus" 
+	width="600" 
+	height="450" 
+	style="border:0;" 
+	allowfullscreen="" 
+	loading="lazy" 
+	referrerpolicy="no-referrer-when-downgrade">
+	</iframe>
+
+
+
+	<figure>
+		<img src="../images/WEIHAI_1.jpg" alt="Weihai " style="width:70%">
+		<figcaption>Fig.1 Weihai, Shandong</figcaption>
+	</figure>
+
+	<picture>
+		<img src="../images/BrownCat_Guai.jpg" class="brownCat" alt="Brown Cat" style="width:70%">
+	</picture>
+
+	<button onclick="showContent()">Click to see my cats' video</button>
+
+	<template>
+	<video width="320" height="240" controls>
+		<source src="../videos/My_Cat_Video.mp4" type="video/mp4">
+	  Your browser does not support the video tag.
+	</video>
+	</template>
+	
+	<script>
+		function showContent() {
+		  var temp = document.getElementsByTagName("template")[0];
+		  var clon = temp.content.cloneNode(true);
+		  document.body.appendChild(clon);
+		}
+	</script>
+
+	<!-- <form id="input" name="myForm" enctype="multipart/form-data" onsubmit="return false">
+		<p> Name: <input type="text" id="fname" name="fname" /> </p>
+		<p> Email: <input type="text" id="email" name="email" /> </p>
+		<input type="submit" value="Submit">
+	</form> -->
+
+
+	
+	<form id="input" name="myForm" enctype="multipart/form-data" onsubmit="return false">
+
+		<fieldset>
+		<legend>Comment</legend>
+		<textarea id="outputDiv" style="width: 200px; height: 75px; border: 1px solid;"></textarea><br/>
+		Name:<input type="text" id="OutputDiv" name="name"/><br/>  
+		Email:<input type="text" id="OutputDiv" name="email"/><br/>  
+		<input type="button" value="commentForm" onclick="formProcess()"/>  
+		</fieldset>
+	</form> 
+
+	<script type="text/javascript">
+		function formProcess () {
+			var capture = document.forms["input"]["name"].value + '<br>';
+			capture += document.forms["input"]["email"].value + '<br>';
+			document.getElementById("OutputDiv").innerHTML = capture;
+			alert("Hello");
+		}
+	</script>
+
+	<svg width="300" height="200">
+		<polygon points="100,10 40,198 190,78 10,78 160,198"/>
+	  Sorry, your browser does not support inline SVG.
+	</svg>
+
+
+
+
+	
+
+</body>
+</html>
