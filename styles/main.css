@@ -1,1 +1,19 @@
+#idLinkedInIcon{background-color:rgb(0, 102, 170);border-radius:6px;color:white;cursor:pointer;display:inline-block;font:bold 25px Arial, Helvetica, sans-serif;height:30px;margin-top:1px;text-align:center;width:30px;}
+#idLinkedInIcon:hover{background-color:#06d;}
+
+:root{
+    background-color: #FFCD00;
+    /* color: #182B49;
+    color: #00629B; */
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* main {
+    --main-bg-color: #00629B;
+} */
+
+code {
+    color: #00629B;
+    font-weight: bold;
+}
 
