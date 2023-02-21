@@ -143,24 +143,112 @@
 		<figcaption>Fig.1 Weihai, Shandong</figcaption>
 	</figure>
 
-	<picture>
-		<img src="../images/BrownCat_Guai.jpg" class="brownCat" alt="Brown Cat" style="width:70%">
-	</picture>
 
-	<button onclick="showContent()">Click to see my cats' video</button>
+	<div id="div_cat">
+		<picture id="catImage">
+			<img src="../images/BrownCat_Guai.jpg" class="brownCat" alt="Brown Cat" style="width:70%">
+		</picture>
+		<br>
+		<button id="button_show_cat_video" onclick="showContent()">Click to see my cats' video</button>
+	</div>
 
-	<template>
-	<video width="320" height="240" controls>
+
+
+	
+
+	<template id="catVideo">
+	<video id = "catVideo1" width="320" height="240" controls>
 		<source src="../videos/My_Cat_Video.mp4" type="video/mp4">
-	  Your browser does not support the video tag.
+	  	Your browser does not support the video tag.
 	</video>
+	<!-- <button id="button_hide_cat_video" onclick="hideContent()">Click to hide my cats' video</button> -->
+	<br>
 	</template>
+
+	<template id="button_hide_cat_video">
+		<button onclick="hideContent()">
+			Click to hide my cats' video
+		</button>
+	</template>
+
+	<template id="button_show_cat_video1">
+		<button onclick="showContent()">
+			Click to see my cat's video
+		</button>
+
+	</template>
+
 	
 	<script>
+		var div_cat = document.getElementById("div_cat");
+		var div_catImage = document.getElementById("catImage");	
+		var temp_catVideo = document.getElementById("catVideo");
+		var show_button = document.getElementById("button_show_cat_video");
+		var hide_button = document.getElementById("button_hide_cat_video");
+		var show_button1 = document.getElementById("button_show_cat_video_1");
+
+		var times_cat_video1_displayed = false;
+
 		function showContent() {
-		  var temp = document.getElementsByTagName("template")[0];
-		  var clon = temp.content.cloneNode(true);
-		  document.body.appendChild(clon);
+
+
+			// console.log("1");
+
+			// if (times_cat_video1_displayed < 1) {
+			// 	var temp = document.getElementsByTagName("template")[0];		
+			// 	var clon = temp.content.cloneNode(true);
+			// 	document.body.appendChild(clon);
+			// 	times_cat_video1_displayed++;
+			// }
+
+			if (!times_cat_video1_displayed) {
+
+				// var clon = temp.content.cloneNode(true);
+				// var temp_catVideo = document.getElementById("catVideo")[0];
+				// var temp_catVideo = document.getElementsByTagName("template")[0];		
+
+				var temp_catVideo_clon = temp_catVideo.content.cloneNode(true);
+				// div_cat.lastChild.appendChild(clon_temp_catVideo);
+				div_catImage.appendChild(temp_catVideo_clon);
+
+				// show_button = getElementById("cat").children[2];
+
+
+
+				// var element = document.getElementById("button_show_cat_video");
+				// element.parentNode.removeChild(element);
+
+				// var show_button = document.getElementById("button_show_cat_video");
+
+				// var clon2 = hide_button.content.cloneNode(true);
+				// element.parentNode.replaceChild(show_button, clon2);
+
+				var clon_hide_button = hide_button.content.cloneNode(true);
+
+				div_cat.replaceChild(clon_hide_button, div_cat.children[2]);
+				
+				times_cat_video1_displayed=true;
+
+			}
+		}
+
+		function hideContent(){
+			// var element1 = document.getElementById("catVideo1");
+			// element1.parentNode.removeChild(element1);
+
+			// var show_button = document.getElementById("button_show_cat_video1")[0];
+
+			// var element = document.getElementById("button_hide_cat_video").children[0];
+			// element.repalceChild(show_button, element);
+
+			div_catImage.removeChild(div_catImage.children[1]);
+			div_catImage.removeChild(div_cat.children[1]);
+
+			var show_button1_clon = show_button1.content.cloneNode(true);
+			div_catImage.appendChild(show_button1_clon);
+			
+			// div_cat.replaceChild(show_button1_clon, div_cat.lastChild);
+
 		}
 	</script>
 
@@ -172,14 +260,15 @@
 
 
 	
-	<form id="input" name="myForm" enctype="multipart/form-data" onsubmit="return false">
+	<!-- <form id="input" name="myForm" enctype="multipart/form-data" onsubmit="return false">
 
 		<fieldset>
 		<legend>Comment</legend>
-		<textarea id="outputDiv" style="width: 200px; height: 75px; border: 1px solid;"></textarea><br/>
-		Name:<input type="text" id="OutputDiv" name="name"/><br/>  
-		Email:<input type="text" id="OutputDiv" name="email"/><br/>  
-		<input type="button" value="commentForm" onclick="formProcess()"/>  
+		<textarea id="outputDiv" style="width: 200px; height: 75px; border: 1px solid;"></textarea><br><br>
+		Name:<input type="text" id="OutputDiv" name="name"><br><br>
+		Email:<input type="text" id="OutputDiv" name="email"><br><br>
+		<input type="button" value="commentForm" onclick="formProcess()">  
+
 		</fieldset>
 	</form> 
 
@@ -190,7 +279,23 @@
 			document.getElementById("OutputDiv").innerHTML = capture;
 			alert("Hello");
 		}
-	</script>
+	</script> -->
+
+	<form id="input" name="myForm" enctype="multipart/form-data" onsubmit="return false">
+
+		<fieldset>
+		<legend>Comment</legend>
+		<textarea id="outputDiv" style="width: 200px; height: 75px; border: 1px solid;"></textarea><br><br>
+ 
+		<label for="fname">Name:</label>
+		<input type="text" id="fname" name="name"><br>
+		<label for="lname">Email:</label>
+		<input type="text" id="lname" name="email"><br><br>
+		<input type="submit" value="Submit">
+		</fieldset>
+	</form> 
+
+
 
 	<svg width="300" height="200">
 		<polygon points="100,10 40,198 190,78 10,78 160,198"/>
