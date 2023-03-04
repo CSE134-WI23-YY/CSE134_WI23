@@ -7,7 +7,7 @@
 
 	<title>Yang Yue</title>
 	<link href="styles/main.css" rel="stylesheet" />
-
+	<script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.2/dist/purify.min.js"></script>
 </head>
 
 <body>
@@ -16,13 +16,66 @@
 	<header>
 		<h1>Yang Yue's Website</h1>
 
-		<button type="button" onclick="alert('Thank you!')">Like<span>&#128077;</span></button>
+		<!-- <button id="like_button" type="button" onclick="alert('Thank you!')">Like<span>&#128077;</span></button> -->
+		<!-- <button id="button_like" type="button">Like<span>&#128077;</span></button> -->
 		
 		<section id="user-info-component">
 
 		</section>
 
 	</header>
+
+
+	<!-- <template id="template_favPartDialog"> -->
+
+		<dialog id="dialog_favPartDialog">
+			<form method="dialog">
+			  <p>
+				<label>Choose your favorite page from my website:
+				<select name="favorite_page" id="favorite_page">
+
+				<optgroup label="This page">
+					<option value="profile_pic1">Yang Yue's profile picture:)</option>
+				</optgroup>
+
+				<optgroup label="About">
+					<option value="orange_cat"> Orange cat :)</option>
+
+				</optgroup>
+
+				<optgroup label="Coursework">
+					<option value="Math"> Math </option>
+					<option value="Computer_Science"> Computer Science </option>
+
+				</optgroup>
+
+				<optgroup label="Projects">
+					<option value="future_project"> The project that is yet to come</option>
+
+				</optgroup>
+
+				<optgroup label="Research">
+					<option value="HDC_research">Hyperdimensional Computing Research</option>
+				</optgroup>
+
+				</select>
+				</label>
+
+			  </p>
+			  <div>
+				<button id="confirmBtn_favPartDialog" value="default">Confirm</button>
+				<button value="cancel">Cancel</button>
+			  </div>
+			</form>
+		  </dialog>
+		  <p>
+			<button id="button_like" type="button">Like<span>&#128077;</span></button>
+		  </p>
+		  <output id="output_favPartDialog"></output>
+
+
+	<!-- </template> -->
+
 
 	<main>
 
@@ -56,6 +109,15 @@
 	document.getElementById("share_code").innerHTML = "I want to share a snippet of instruction of ignition for <b>Apolo 11</b>";
 	</script> 
 
+	<!-- <script src="./js/main.js" type="module"> -->
+	<script src= "./js/customdialog.js" type=module>
+
+		// import {sayHi} from './js/sayHi.js';
+		// sayHi("John");
+	
+
+	</script>
+
 	<a href="https://github.com/chrislgarry/Apollo-11/blob/master/Luminary099/BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc">
 		Gtihub repo of Apolo 11's instruction </a>
 
@@ -85,41 +147,43 @@
 
 			<label for="favorite_page">Choose your favorite page from my website:</label>
 			<select name="favorite_page" id="favorite_page">
-			
-			  <optgroup label="This page">
-				  <option value="profile_pic1">Yang Yue's profile picture:)</option>
-			  </optgroup>
-			  
-			  <optgroup label="About">
-				  <option value="orange_cat"> Orange cat :)</option>
-		  
-			  </optgroup>
-			  
-			  <optgroup label="Coursework">
-				  <option value="Math"> Math </option>
-				  <option value="Computer Science"> Computer Science </option>
-		  
-			  </optgroup>
-			  
-			  <optgroup label="Projects">
-				  <option value="future_project"> The project that is yet to come</option>
-		  
-			  </optgroup>
-			  
-			  <optgroup label="Research">
-				  <option value="HDC_research">Hyperdimensional Computing Research</option>
-			  </optgroup>
+
+				<optgroup label="This page">
+					<option value="profile_pic1">Yang Yue's profile picture:)</option>
+				</optgroup>
+				
+				<optgroup label="About">
+					<option value="orange_cat"> Orange cat :)</option>
+
+				</optgroup>
+				
+				<optgroup label="Coursework">
+					<option value="Math"> Math </option>
+					<option value="Computer Science"> Computer Science </option>
+
+				</optgroup>
+				
+				<optgroup label="Projects">
+					<option value="future_project"> The project that is yet to come</option>
+
+				</optgroup>
+				
+				<optgroup label="Research">
+					<option value="HDC_research">Hyperdimensional Computing Research</option>
+				</optgroup>
 			</select>
 			<br>
 
 			<textarea id="comment" name="comment" rows="4" cols="50">Anything of my website should be improved? Or any comment!
 			</textarea>
-			
+
 			<!-- Name:<input type="text" id="ID_name" name="name"/><br/>  
 			Email:<input type="text" id="ID_email" name="email"/><br/>  
 			<input type="button" value="commentForm" onclick="formProcess()"/> 
 			<br>
 			<input type="submit" value="Submit"> -->
+
+			<br>
 
 
 			<label for="fname">Name:</label>
@@ -131,6 +195,11 @@
 		</fieldset>
 
 	</form>
+
+	<!-- A modal dialog containing a form -->
+
+
+
 
 
 

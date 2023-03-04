@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nativedialog</title>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.2/dist/purify.min.js"></script>
+
+</head>
+
+<body>
+    <script src="../JavaScript/JS.js"></script>
+
+
+    <button id="alert1">Alert</button>
+    <button id="confirm1">Confirm</button>
+    <button id="prompt1">Prompt</button>
+    <button id="safer_prompt1"> Safer Prompt</button>
+    <br>
+
+    <div id="end">
+
+    </div>
+
+
+    <template id="confirm_result_template">
+
+      <!-- <div>Confirm result</div> -->
+        <output id="confirm_result_output"></output>
+    </template>
+
+    <template id="prompt_result_template">
+        <output id="prompt_result_output"></output>
+    </template>
+
+    <script>
+    // <script typle="module">
+        var end = document.getElementById("end");
+
+        var alert1 = document.getElementById("alert1");
+
+        var confrm1 = document.getElementById("confirm1");
+
+        var prompt1 = document.getElementById("prompt1");
+        var safer_promt1 = document.getElementById("safer_prompt1");
+
+
+        var confirm_result_template = document.getElementById("confirm_result_template");
+        var prompt_result_template = document.getElementById("prompt_result_template");
+
+
+        alert1.addEventListener("click", func_alert);
+        // alert1.addEventListener("click", alert("Alert pressed!"));
+        confirm1.addEventListener("click", func_confirm);
+        prompt1.addEventListener("click", func_prompt);
+        safer_promt1.addEventListener("click", func_safer_prompt);
+
+
+
+        function deleteChild(child) {
+            child = child.lastElementChild; 
+            while (child) {
+                end.removeChild(child);
+                child = end.lastElementChild;
+            }
+        }
+
+
+        function func_alert() {
+            setTimeout(alert("Alert pressed!"), 2.0 * 1000);
+        }
+
+        function func_confirm() {
+            confirm_result_input = confirm("Do you confirm this?");
+            
+            deleteChild(end);
+            
+            var clon = confirm_result_template.content.cloneNode(true);
+
+            confirm_result_output = clon.getElementById("confirm_result_output");
+
+            confirm_result_output.innerHTML = "Confirm result: " + confirm_result_input;
+
+            end.appendChild(clon);
+
+
+
+        }
+
+        function func_prompt() {
+            deleteChild(end);
+
+            var prompt_result_input = prompt("What is your name?")
+
+            var clon = prompt_result_template.content.cloneNode(true);
+
+            prompt_result_output = clon.getElementById("prompt_result_output");
+
+            prompt_result_output.innerHTML = "Prompt result: " + prompt_result_input;
+
+            end.appendChild(clon);
+
+        }
+
+
+        function func_safer_prompt() {
+            deleteChild(end);
+
+            var prompt_result_input = prompt("What is your name?")
+
+            // import createDOMPurify from 'dompurify';
+            // const domPurify = createDOMPurify();
+
+        
+
+            prompt_result_input_purified = DOMPurify.sanitize(prompt_result_input);
+
+            var clon = prompt_result_template.content.cloneNode(true);
+
+            prompt_result_output = clon.getElementById("prompt_result_output");
+
+            // test on input: <b onmouseover = "alert('pwnd')" > Roll me </b>
+            // prompt_result_input HAS onmouseover effect 
+            // prompt_result_output.innerHTML = "Prompt result: " + prompt_result_input_purified;
+
+
+            // prompt_result_input_purified does NOT have onmouseover effect
+            prompt_result_output.innerHTML = "Prompt result: " + prompt_result_input_purified;
+
+            end.appendChild(clon);
+
+        }
+
+
+    </script>
+</body>
+
+
+
+
+
+</html>
