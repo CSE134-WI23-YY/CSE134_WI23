@@ -28,50 +28,65 @@
 
 	<!-- <template id="template_favPartDialog"> -->
 
-		<dialog id="dialog_favPartDialog">
-			<form method="dialog">
-			  <p>
+	<dialog id="dialog_favPartDialog">
+		<form id="form_favPartDialog" method="dialog">
+			<p>
 				<label>Choose your favorite page from my website:
-				<select name="favorite_page" id="favorite_page">
 
-				<optgroup label="This page">
-					<option value="profile_pic1">Yang Yue's profile picture:)</option>
-				</optgroup>
 
-				<optgroup label="About">
-					<option value="orange_cat"> Orange cat :)</option>
+					<!-- According to crud_demo.html, id and name CAN be the SAME-->
+					<select name="select_favPartDialog" id="select_favPartDialog">
 
-				</optgroup>
+						<!-- //////////Even if this is clicked, select_favPartDialog does NOT 'chage'-->
+						<option value="Pleae choose one!">Choose…</option>
+						<!-- <option value="option2"></option> -->
+						<optgroup label="This page">
+							<option value="You think me handsome? :)">Yang Yue's profile picture:)</option>
+						</optgroup>
 
-				<optgroup label="Coursework">
-					<option value="Math"> Math </option>
-					<option value="Computer_Science"> Computer Science </option>
+						<optgroup label="About">
+							<option value="The black cat's name is YUAN."> Orange cat :)</option>
+						</optgroup>
 
-				</optgroup>
+						<optgroup label="Coursework">
+							<option value="Math"> Math </option>
+							<option value="Contact me for more information!"> Computer Science </option>
 
-				<optgroup label="Projects">
-					<option value="future_project"> The project that is yet to come</option>
+						</optgroup>
 
-				</optgroup>
+						<optgroup label="Projects">
+							<option value="My future project will be awesome!"> The project that is yet to come</option>
 
-				<optgroup label="Research">
-					<option value="HDC_research">Hyperdimensional Computing Research</option>
-				</optgroup>
+						</optgroup>
 
-				</select>
+						<optgroup label="Research">
+							<option value="I will have published one paper at this time next year with at least 10 citation!">Convex Optimization</option>
+						</optgroup>
+
+					</select>
 				</label>
 
-			  </p>
-			  <div>
-				<button id="confirmBtn_favPartDialog" value="default">Confirm</button>
-				<button value="cancel">Cancel</button>
-			  </div>
-			</form>
-		  </dialog>
-		  <p>
-			<button id="button_like" type="button">Like<span>&#128077;</span></button>
-		  </p>
-		  <output id="output_favPartDialog"></output>
+			</p>
+
+			<div>
+				<!-- <button id="confirmBtn_favPartDialog">Confirm</button> -->
+				
+				<button id="confirmBtn_favPartDialog" value="Please choose one!">Confirm</button>
+				<button value="You cancelled! Click the button to restart the dialog.">Cancel</button>
+				
+				<!-- try set Attributes in another way -->
+				<!-- <button >
+					<value="You cancelled! Click the button to restart the dialog."></value>
+					Cancel</button> -->
+			</div>
+		</form>
+	</dialog>
+
+	<p>
+		<button id="button_like" type="button">Like<span>&#128077;</span></button>
+	</p>
+
+	<output id="output_favPartDialog"></output>
 
 
 	<!-- </template> -->
@@ -139,8 +154,8 @@
 
 	
 
-
-	<form action="/action_page.php">
+	<form>
+	<!-- <form action="/action_page.php"> -->
 		<fieldset>
 			<legend>Comment:</legend>
 
