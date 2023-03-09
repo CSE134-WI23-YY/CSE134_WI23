@@ -13,13 +13,54 @@
 <body>
 
     <h1> Big List of Movies</h1>
+	
+	<ul id='movieUl_1'>
 
-    
+		<!-- test deleteMovie in blog.js
+		<li id='deleteMovie_test1'>
+			<output id='output_movie1'> movie 1</output>
+		</li> -->
+
+
+		<li>Tea</li>
+	</ul>
+
+	
+
+    <template id='template_movie'>
+		<li id = 'movieLi'>
+			<output> movie 1</output>
+			<button id="editBtn">Edit</button>
+			<button id='deleteBtn'>Delete</button>
+		</li>
+
+	</template>
+
+
+	<script type='module'>
+		import * as blogs from '../js/blog.js';
+
+
+		// test if alert works in general
+		// alert("Hello");
+
+		// if alert works, test whether the module is successfully imported
+		// blogs.testImport();
+
+		// test deleteMovie in blog.js
+		// const deleteMovie_test1 = document.getElementById('deleteMovie_test1');
+		// blogs.deleteMovie(deleteMovie_test1);
+
+		blogs.addMovie('movieUl_1');
+		blogs.addMovie('movieUl_1');
+
+
+	</script>
 
 
     <footer>
 		<p>Author: Yang Yue</p>
-		<p><a href="yayue@ucsd.edu">yayue@ucsd.edu</a></p>
+		<p><a href='yayue@ucsd.edu'>yayue@ucsd.edu</a></p>
 	</footer>
 
 </body>
