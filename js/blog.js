@@ -15,7 +15,7 @@ export function deleteMovie(movieLi) {
 }
 
 const template_movie = document.getElementById('template_movie');
-const movieLi = template_movie.content.getElementById('movieLi');
+// const movieLi = template_movie.content.getElementById('movieLi');
 
 
 // IMPORTANT: input should be id of movie unordered list
@@ -47,7 +47,7 @@ export function addMovie(movieUlId) {
     // movieLi.getElementById is not a function
     // const deleteBtn = movieLi.getElementById('deleteBtn');
 
-    const deleteBtn = movieLi.children['deleteBtn'];
+    const deleteBtn = movieLi.children['deleteMovieBtn'];
 
 
     deleteBtn.addEventListener('click', ()=>{
@@ -80,3 +80,37 @@ export function addMovie(movieUlId) {
 
 
 }
+
+
+// refers to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+
+
+const addMovieBtn1 = document.getElementById('addMovieBtn1');
+const dialog_addMovie = document.getElementById("dialog_addMovie");
+const output_addMovie = document.getElementById('output_addMovie');
+const confirmBtn_addMovie = document.getElementById('confirmBtn_addMovie');
+// const form_addMovie = document.getElementById('form_addMovie');
+const select_addMovie = document.getElementById('select_addMovie');
+
+
+
+addMovieBtn1.addEventListener('click', ()=>{
+    dialog_addMovie.showModal();
+
+    // how to make the movie li entry appear AFTER the dialog?
+    addMovie('movieUl_1');
+});
+
+// The guide gives (e) \\\\\\\\\\\\\\\\\\ WHY
+// select_favPartDialog.addEventListener('change', (e)=> {
+select_addMovie.addEventListener('change', ()=> {
+    confirmBtn_addMovie.value = select_addMovie.value;
+});
+
+dialog_addMovie.addEventListener('close', ()=> {
+    // output_favPartDialog.innerText = "Thank you!"+${dialog_favPartDialog.returnValue};
+    // output_favPartDialog.innerHTML= `Thank you! ${dialog_favPartDialog.returnValue}`;
+    output_addMovie.value= `Thank you! ${dialog_addMovie.returnValue}`;
+    // returnValue_favDialog_purified = DOMPurify.sanitize(favDialog.returnValue); 
+    // output_favPartDialog.value = 'ReturnValue: ${returnValue_favDialog_purified}.';
+});

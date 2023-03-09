@@ -25,13 +25,74 @@
 		<li>Tea</li>
 	</ul>
 
+	<dialog id='dialog_addMovie'>
+		<form id='form_addMovie' method='dialog'>
+			<p>
+				<label>Choose your favorite page from my website:
+
+
+					<!-- According to crud_demo.html, id and name CAN be the SAME-->
+					<select name="select_addMovie" id="select_addMovie">
+
+						<!-- //////////Even if this is clicked, select_favPartDialog does NOT 'chage'-->
+						<option value="Pleae choose one!">Choose…</option>
+						<!-- <option value="option2"></option> -->
+						<optgroup label="This page">
+							<option value="You think me handsome? :)">Yang Yue's profile picture:)</option>
+						</optgroup>
+
+						<optgroup label="About">
+							<option value="The black cat's name is YUAN."> Orange cat :)</option>
+						</optgroup>
+
+						<optgroup label="Coursework">
+							<option value="Math"> Math </option>
+							<option value="Contact me for more information!"> Computer Science </option>
+
+						</optgroup>
+
+						<optgroup label="Projects">
+							<option value="My future project will be awesome!"> The project that is yet to come</option>
+
+						</optgroup>
+
+						<optgroup label="Research">
+							<option value="I will have published one paper at this time next year with at least 10 citation!">Convex Optimization</option>
+						</optgroup>
+
+					</select>
+				</label>
+
+			</p>
+
+			<div>
+				<!-- <button id="confirmBtn_favPartDialog">Confirm</button> -->
+				
+				<button id="confirmBtn_addMovie" value="Please choose one!">Confirm</button>
+				<button value="You cancelled! Click the button to restart the dialog.">Cancel</button>
+				
+				<!-- try set Attributes in another way -->
+				<!-- <button >
+					<value="You cancelled! Click the button to restart the dialog."></value>
+					Cancel</button> -->
+			</div>
+		</form>
+	</dialog>
+
+	<!-- <p> makes the output appear in the next line-->
+	<p>
+	<button id='addMovieBtn1'>Add Movie</button>
+	</p>
+
+	<output id='output_addMovie'></output>
+
 	
 
     <template id='template_movie'>
 		<li id = 'movieLi'>
 			<output> movie 1</output>
-			<button id="editBtn">Edit</button>
-			<button id='deleteBtn'>Delete</button>
+			<button id="editMovieBtn">Edit</button>
+			<button id='deleteMovieBtn'>Delete</button>
 		</li>
 
 	</template>
@@ -53,6 +114,16 @@
 
 		blogs.addMovie('movieUl_1');
 		blogs.addMovie('movieUl_1');
+		blogs.addMovie('movieUl_1');
+
+		// DON'T FORGET const/var
+		// const addMovieBtn1 = document.getElementById('addMovieBtn1');
+
+		// addMovieBtn1.addEventListener('click', ()=> {
+
+		// 	// use BLOGS.
+		// 	blogs.addMovie('movieUl_1');
+		// });
 
 
 	</script>
