@@ -114,3 +114,9 @@ dialog_addMovie.addEventListener('close', ()=> {
     // returnValue_favDialog_purified = DOMPurify.sanitize(favDialog.returnValue); 
     // output_favPartDialog.value = 'ReturnValue: ${returnValue_favDialog_purified}.';
 });
+
+
+
+// obj = documetn.createELement('ul');
+
+// obj.innerHTML = `<h1 id='title> <' ` ' ` '
