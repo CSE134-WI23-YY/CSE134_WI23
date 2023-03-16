@@ -2,11 +2,11 @@
 
 Name: Yang Yue
 
-Link to index.html: https://thunderous-bubblegum-dfb55d.netlify.app
+Link to index.html: https://playful-lolly-6e4f8d.netlify.app
 
 Note:
 
-1. Links to nativedialogs.html, crud.html, github repo, etc. are shown in link.md
+1. Links to methodtest.html, webcomponent.html, github repo, etc. are shown in link.md
 
 2. You can also jump to those parts by the navigation bars on the homepage
 
